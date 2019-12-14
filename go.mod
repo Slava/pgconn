@@ -1,13 +1,14 @@
-module github.com/jackc/pgconn
+module github.com/figma/pgconn
 
 go 1.12
 
 require (
+	github.com/figma/pgproto3/v2 v2.0.0-figma1
 	github.com/jackc/chunkreader/v2 v2.0.0
+	github.com/jackc/pgconn v0.0.0-20190831204454-2fabfa3c18b7
 	github.com/jackc/pgio v1.0.0
 	github.com/jackc/pgmock v0.0.0-20190831213851-13a1b77aafa2
 	github.com/jackc/pgpassfile v1.0.0
-	github.com/jackc/pgproto3/v2 v2.0.0
 	github.com/stretchr/testify v1.4.0
 	golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
 	golang.org/x/text v0.3.2

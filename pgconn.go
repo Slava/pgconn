@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jackc/pgconn/internal/ctxwatch"
+	"github.com/figma/pgconn/internal/ctxwatch"
+	"github.com/figma/pgproto3/v2"
 	"github.com/jackc/pgio"
-	"github.com/jackc/pgproto3/v2"
 	errors "golang.org/x/xerrors"
 )
 
