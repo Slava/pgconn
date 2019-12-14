@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/jackc/pgconn"
+	"github.com/Slava/pgconn"
 )
 
 var lruCount uint64

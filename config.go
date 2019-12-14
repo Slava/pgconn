@@ -17,9 +17,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jackc/chunkreader/v2"
+	"github.com/Slava/pgproto3/v2"
 	"github.com/jackc/pgpassfile"
-	"github.com/jackc/pgproto3/v2"
 	errors "golang.org/x/xerrors"
 )
 
@@ -554,12 +553,7 @@ func makeDefaultResolver() *net.Resolver {
 
 func makeDefaultBuildFrontendFunc(minBufferLen int) BuildFrontendFunc {
 	return func(r io.Reader, w io.Writer) Frontend {
-		cr, err := chunkreader.NewConfig(r, chunkreader.Config{MinBufLen: minBufferLen})
-		if err != nil {
-			panic(fmt.Sprintf("BUG: chunkreader.NewConfig failed: %v", err))
-		}
-		frontend := pgproto3.NewFrontend(cr, w)
-
+		frontend := pgproto3.NewFrontend(r, w)
 		return frontend
 	}
 }
